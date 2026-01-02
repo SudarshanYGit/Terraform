@@ -93,4 +93,4 @@ resource "aws_security_group" "demo_sg" {
 #public-subnet=subnet
 #public-rt=route-table
 #private-subnet=subnet
-#sg=security-group
+#sg=security-group.
