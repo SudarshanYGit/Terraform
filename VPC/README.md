@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,14 +8,15 @@
         body {
             font-family: Arial, sans-serif;
             background-color: #f4f6f8;
-            padding: 30px;
+            padding: 40px;
         }
-        .container {
-            background: white;
-            padding: 20px;
-            max-width: 600px;
-            margin: auto;
+        .card {
+            background: #ffffff;
+            padding: 25px;
             border-radius: 8px;
+            max-width: 700px;
+            margin: auto;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
         }
         h1 {
             color: #2c3e50;
@@ -26,7 +28,7 @@
 </head>
 <body>
 
-<div class="container">
+<div class="card">
     <h1>AWS VPC using Terraform</h1>
     <p>
         This project demonstrates how to create an AWS Virtual Private Cloud (VPC)
@@ -35,6 +37,15 @@
 
     <h3>Features</h3>
     <ul>
-        <li>Creates an AWS VPC</li>
-        <li>Uses variables for flexibility</li>
-        <li>Outp
+        <li>Creates a custom AWS VPC</li>
+        <li>Uses Terraform variables</li>
+        <li>Outputs VPC details</li>
+        <li>Beginner-friendly setup</li>
+    </ul>
+
+    <h3>Author</h3>
+    <p>Sudarshan Y</p>
+</div>
+
+</body>
+</html>
