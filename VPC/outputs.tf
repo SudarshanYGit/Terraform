@@ -14,6 +14,6 @@ output "private_subnet_id" {
 }
 
 output "security_group_id" {
-  description = "ID of the security-group"
+  description = "ID of the security-grp"
   value       = aws_security_group.demo_sg.id
 }
