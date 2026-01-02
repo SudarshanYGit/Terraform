@@ -89,3 +89,8 @@ resource "aws_security_group" "demo_sg" {
     Name = "${var.vpc_name}-sg"
   }
 }
+#igw=internet-gateway
+#public-subnet=subnet
+#public-rt=route-table
+#private-subnet=subnet
+#sg=security-group
