@@ -9,30 +9,25 @@ terraform {
 provider "aws" {
   region = var.aws_region
 }
-
 variable "aws_region" {
   type    = string
   default = "ap-south-1"
 }
-
 variable "state_bucket_name" {
   type    = string
   default = "tf-state-sudarshan-1072"
 }
-
 variable "dynamodb_table_name" {
   type    = string
   default = "tf-state-locks-sudarshan-1072"
 }
-
 resource "aws_s3_bucket" "tf_state" {
   bucket = var.state_bucket_name
+  force_destroy = true
   acl    = "private"
-
   versioning {
     enabled = true
   }
-
   server_side_encryption_configuration {
     rule {
       apply_server_side_encryption_by_default {
