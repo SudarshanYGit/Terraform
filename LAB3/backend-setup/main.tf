@@ -15,11 +15,11 @@ variable "aws_region" {
 }
 variable "state_bucket_name" {
   type    = string
-  default = "tf-state-sudarshan-1072"
+  default = "tf-state-Sudarshan-1072"
 }
 variable "dynamodb_table_name" {
   type    = string
-  default = "tf-state-locks-sudarshan-1072"
+  default = "tf-state-locks-Sudarshan-1072"
 }
 resource "aws_s3_bucket" "tf_state" {
   bucket = var.state_bucket_name
