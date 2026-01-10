@@ -1,7 +1,7 @@
 terraform {
   backend "s3" {
     bucket         = "tf-state-Sudarshan-1072"
-    key            = "env/dev/terraform.tfstate"  # folder/path inside bucket
+    key            = "env/dev/terraform.tfstate"
     region         = "ap-south-1"
     dynamodb_table = "tf-state-locks-Sudarshan-1072"
     encrypt        = true
