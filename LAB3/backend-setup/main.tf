@@ -19,7 +19,7 @@ variable "state_bucket_name" {
 }
 variable "dynamodb_table_name" {
   type    = string
-  default = "tf-state-locks-Sudarshan-1072"
+  default = "tf-state-locks-sudarshan-1072"
 }
 resource "aws_s3_bucket" "tf_state" {
   bucket = var.state_bucket_name
