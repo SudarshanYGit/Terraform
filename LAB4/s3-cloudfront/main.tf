@@ -25,14 +25,14 @@ resource "aws_s3_bucket_website_configuration" "website_config" {
 resource "aws_s3_object" "index" {
   bucket       = aws_s3_bucket.website_bucket.id
   key          = "index.html"
-  content      = "<h1>Lab -4 : Website Hosting on Amazon S3 with CloudFront using Terraform.</h1><p><h2>This is index page.....</h2></p><p><h2>Sudarshan Yelwande</h2></p><p><h2>20230801072</h2></p>"
+  content      = "<h1>Website Hosting on Amazon S3 with CloudFront using Terraform.</h1><p><h2>This is index page.....</h2></p><p><h2>Sudarshan Yelwande</h2></p><p><p>This Terraform configuration provisions a secure static website hosting setup on AWS. It creates an S3 bucket with a unique name to store website files, uploads index.html and error.html, and enables S3 static website configuration.A CloudFront distribution is configured in front of the S3 bucket for faster global content delivery, HTTPS access, and caching. Access to the S3 bucket is restricted using a CloudFront Origin Access Identity (OAI), ensuring content is served only through CloudFront. Finally, it outputs the S3 bucket name and CloudFront URL for easy access.</p></p>"
   content_type = "text/html"
 }
 
 resource "aws_s3_object" "error" {
   bucket       = aws_s3_bucket.website_bucket.id
   key          = "error.html"
-  content      = "<h1>Oops! Page not found (404)</h1>"
+  content      = "<h1>Oops! Page not found Spot the error(404)</h1>"
   content_type = "text/html"
 }
 
