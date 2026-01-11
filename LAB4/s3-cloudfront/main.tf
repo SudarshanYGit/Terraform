@@ -38,7 +38,7 @@ resource "aws_s3_object" "index" {
         url("https://images.unsplash.com/photo-1518770660439-4636190af475");
       background-size: cover;
       background-position: center;
-      color: blue;
+      color: yellow;
       text-align: center;
       font-family: Arial, sans-serif;
       padding-top: 60px;
