@@ -23,12 +23,44 @@ resource "aws_s3_bucket_website_configuration" "website_config" {
 }
 
 resource "aws_s3_object" "index" {
-  bucket       = aws_s3_bucket.website_bucket.id
-  key          = "index.html"
-  content      = "<h1>Website Hosting on Amazon S3 with CloudFront using Terraform.</h1><p><h2>This is index page.....</h2></p><p><h2>Sudarshan Yelwande</h2></p><p><p>This Terraform configuration provisions a secure static website hosting setup on AWS. It creates an S3 bucket with a unique name to store website files, uploads index.html and error.html, and enables S3 static website configuration.A CloudFront distribution is configured in front of the S3 bucket for faster global content delivery, HTTPS access, and caching. Access to the S3 bucket is restricted using a CloudFront Origin Access Identity (OAI), ensuring content is served only through CloudFront. Finally, it outputs the S3 bucket name and CloudFront URL for easy access.</p></p>"
+  bucket = aws_s3_bucket.website_bucket.id
+  key    = "index.html"
+
+  content = <<EOF
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Static Website</title>
+  <style>
+    body {
+      background:
+        linear-gradient(rgba(21, 190, 170, 0.68), rgba(151, 32, 32, 0.6)),
+        url("https://images.unsplash.com/photo-1518770660439-4636190af475");
+      background-size: cover;
+      background-position: center;
+      color: white;
+      text-align: center;
+      font-family: Arial, sans-serif;
+      padding-top: 60px;
+    }
+  </style>
+</head>
+
+<body>
+  <h1>Website Hosting on Amazon S3 with CloudFront using Terraform</h1>
+  <p>This Terraform configuration provisions a secure static website hosting setup on AWS. 
+  It creates an S3 bucket with a unique name to store website files, uploads index.html and error.html, and enables S3 static website configuration. 
+  A CloudFront distribution is configured in front of the S3 bucket for faster global content delivery, HTTPS access, and caching. 
+  Access to the S3 bucket is restricted using a CloudFront Origin Access Identity (OAI), ensuring content is served only through CloudFront. 
+  Finally, it outputs the S3 bucket name and CloudFront URL for easy access.</p>
+  <h2>This is index page</h2>
+  <h2>Sudarshan Yelwande</h2>
+</body>
+</html>
+EOF
+
   content_type = "text/html"
 }
-
 resource "aws_s3_object" "error" {
   bucket       = aws_s3_bucket.website_bucket.id
   key          = "error.html"
